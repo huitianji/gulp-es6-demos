@@ -1,0 +1,11 @@
+{
+  "name": "gulp-es6-demos",
+  "version": "1.0.0",
+  "description": "gulp-es6运用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
