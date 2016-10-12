@@ -3,3 +3,48 @@
 
     npm install gulp-babel --save-dev
     npm install babel-preset-es2015 --save-dev
+
+## gulp-clean-css
+
+    使用gulp-minify-css压缩css文件，减小文件大小，并给引用url添加版本号避免缓存。重要：gulp-minify-css已经被废弃，请使用gulp-clean-css，用法一致。
+
+## 启动本地服务
+    gulp.task('server', function () {
+        $.connect.server({
+            root:'./',
+            port:8080,
+            livereload:true//启动实时刷新功能
+        });
+    });
+
+##
+    //less
+        gulp.src(['src/less/*.less', '!src/less/_*.less'])
+            .pipe($.less())
+            .pipe(minify())
+            .pipe(
+                gulp.dest('dist/css/')
+            )
+            .pipe($.connect.reload());//通知浏览器重启
+
+##
+
+    编译 Sass:gulp-sass
+    编译 Less:gulp-less
+    合并文件 :gulp-concat
+    压缩js文件:gulp-uglify
+    重命名js文件： gulp-rename
+    优化图像大小 : gulp-imagemin
+    压缩css文件  ：gulp-minify-css    ----  gulp-clean-css
+    创建本地服务器 : gulp-connect
+    实时预览     ：  gulp-connect
+    html文件压缩 ： gulp-minify-html
+
+    gulp-load-plugins 这个插件能自动帮你加载 package.json 文件里的gulp插件
+
+    然后我们可以在gulpfile.js中使用gulp-load-plugins来帮助我们加载插件：
+    var  gulp = require("gulp");
+    //加载gulp-load-plugins插件，并马上运行它
+    var $ = require('gulp-load-plugins')();
+    然后我们要使用 gulp-rename 和 gulp-ruby-sass这两个插件的时候
+    就可以直接$.concat 和$.connect 来代替。。业绩是原始插件名去掉gulp-前缀
