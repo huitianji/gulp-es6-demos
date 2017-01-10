@@ -7,4 +7,4 @@ const fatorial = num => {
     }
 };
 console.log(fatorial(3));
-console.log("a");
+console.log("axxx");

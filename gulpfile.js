@@ -60,14 +60,17 @@ gulp.task('watch', function () {
 
     //gulp.watch(['src/pages/*.html', 'src/less/*.less'], ['copyless']);
 
-    gulp.watch(['src/**'], ['copyless', 'watchHtml', 'watchJs', 'watchImg']);
+    gulp.watch(
+        ['src/**'],
+        ['copyless', 'watchHtml', 'watchJs', 'watchImg']
+    );
 
 });
 
 gulp.task('server', function () {
     $.connect.server({
         root:'./',
-        port:8080,
+        port:8081,
         livereload:true//启动实时刷新功能
     });
 });
